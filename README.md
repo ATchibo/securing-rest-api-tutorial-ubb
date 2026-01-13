@@ -41,9 +41,9 @@ cd jwt-tutorial
 go mod init jwt-tutorial
 
 # Install Fiber (Web Framework) and JWT Middleware
-go get [github.com/gofiber/fiber/v2](https://github.com/gofiber/fiber/v2)
-go get [github.com/gofiber/jwt/v3](https://github.com/gofiber/jwt/v3)
-go get [github.com/golang-jwt/jwt/v4](https://github.com/golang-jwt/jwt/v4)
+go get github.com/gofiber/fiber/v2
+go get github.com/gofiber/jwt/v3
+go get github.com/golang-jwt/jwt/v4
 ```
 
 ### Step 2: The Code (`main.go`)
@@ -55,9 +55,9 @@ package main
 
 import (
     "time"
-    "[github.com/gofiber/fiber/v2](https://github.com/gofiber/fiber/v2)"
-    jwtware "[github.com/gofiber/jwt/v3](https://github.com/gofiber/jwt/v3)"
-    "[github.com/golang-jwt/jwt/v4](https://github.com/golang-jwt/jwt/v4)"
+    "github.com/gofiber/fiber/v2"
+    jwtware "github.com/gofiber/jwt/v3"
+    "github.com/golang-jwt/jwt/v4"
 )
 
 // ⚠️ WARNING: In production, store this in an Environment Variable!
@@ -141,6 +141,11 @@ func getBalance(c *fiber.Ctx) error {
 ## 4. Testing the Security
 
 We will use `curl` to prove the security works.
+
+First, run the app using the following command:
+```
+go run main.go
+```
 
 ### Scenario A: The Intruder (No Token)
 Try to access the balance without logging in.
